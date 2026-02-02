@@ -21,9 +21,9 @@ Group members: Zehan Li, Simmons Yin, Brttany An
 
 | Member   | Role                                    |
 | -------- | --------------------------------------- |
-| Brittany | Repository owner, visualizations        |
-| Zehan    | Data acquisition (Reddit PRAW, NYT API) |
-| Simmons  | NLP preprocessing, sentiment analysis   |
+| Brittany | Repository owner, Data collection,Visualizations |
+| Zehan    | Data acquisition (Reddit PRAW) |
+| Simmons  | NLP preprocessing, Sentiment analysis   |
 
 ## Collaboration Workflow
 
