@@ -25,7 +25,7 @@ Our project investigates the "interpretive lag" between technical reality and pu
   - Issue: No Cloudflare 2019 event-window coverage; resolved by the 2021 Facebook outage, which provides extensive Pre-AI data from this source.
 
 - **GDELT Global Knowledge Graph (direct download)** — [https://data.gdeltproject.org/gkg/index.html](https://data.gdeltproject.org/gkg/index.html)
-  - ✅ Collected. Downloaded daily GKG CSV files for event windows (t−1 to t+2). Cloudflare events: 38 articles (2019), 620 articles (2025). **2017 AWS S3 outage: 330 articles collected.** Sources are predominantly non-mainstream outlets.
+  - ✅ Collected. Downloaded daily GKG CSV files for event windows (t−1 to t+2). Cloudflare events: 38 articles (2019), 620 articles (2025). **2021 AWS S4 outage: 312 articles collected.** Sources are predominantly non-mainstream outlets.
   - New source (not in original proposal). Added to broaden coverage beyond major outlets.
   - Issue: Noisy data requiring further cleaning and deduplication.
 
@@ -38,7 +38,7 @@ Our project investigates the "interpretive lag" between technical reality and pu
   - 🔄 In progress. Code being developed to scrape official incident reports as "technical ground truth."
   - Included in original proposal.
 
-**Summary of data balance:** Post-AI (2025) data is abundant (~620+ GDELT articles, plus NYT/Guardian/Fox coverage). Pre-AI data has been substantially strengthened by adding two additional events: the 2021 Facebook outage (NYT: 15 direct + 82 related; Guardian: 80 direct + 400+ related) and the 2017 AWS outage (GDELT: 330 articles). Combined with the original 2019 Cloudflare data (~40–50 articles across sources), the Pre-AI corpus is now comparably sized, addressing our earlier data imbalance concern.
+**Summary of data balance:** Post-AI (2025) data is abundant (~620+ GDELT articles, plus NYT/Guardian/Fox coverage). Pre-AI data has been substantially strengthened by adding two additional events: the 2021 Facebook outage (NYT: 15 direct + 82 related; Guardian: 80 direct + 400+ related) and the 2021 AWS outage (GDELT: 312 articles). Combined with the original 2019 Cloudflare data (~40–50 articles across sources), the Pre-AI corpus is now comparably sized, addressing our earlier data imbalance concern.
 
 ---
 
@@ -77,6 +77,6 @@ No major changes from the original plan. The addition of embedding-based semanti
 |--------|-----------------|
 | **Zhimeng (Brittany) An** | Data collection: writing and maintaining API/scraping scripts (NYT, Guardian, GDELT, Fox News, blog post-mortems). Led Cloudflare event data collection. |
 | **Zehan Li** | Data collection for the 2021 Facebook outage case study. Visualization, conceptual framing, and project organization: designing comparative visualizations, maintaining GitHub repository structure, and shaping the research narrative. |
-| **Simmons Yin** | Data collection for the 2017 AWS outage case study. Data processing and analysis: text cleaning pipeline, TF-IDF, VADER sentiment analysis, n-gram analysis, embedding-based semantic similarity, and exploratory statistics. |
+| **Simmons Yin** | Data collection for the 2021 AWS outage case study. Data processing and analysis: text cleaning pipeline, TF-IDF, VADER sentiment analysis, n-gram analysis, embedding-based semantic similarity, and exploratory statistics. |
 
 **Changes from original proposal:** Zehan's role shifted from data acquisition to visualization and project organization; Brittany shifted from visualization to data collection. As the project expanded to multiple Pre-AI events, Zehan and Simmons each took ownership of collecting data for one additional case study (Facebook and AWS, respectively). Simmons's analysis role remains unchanged.
