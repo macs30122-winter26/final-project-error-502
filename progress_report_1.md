@@ -29,9 +29,6 @@ Our project investigates the "interpretive lag" between technical reality and pu
   - New source (not in original proposal). Added to broaden coverage beyond major outlets.
   - Issue: Noisy data requiring further cleaning and deduplication.
 
-- **Fox News API**
-  - ✅ Collected. Retrieved 4–5 Pre-AI articles related to Cloudflare/infrastructure outages.
-  - New source (not in original proposal). Added to increase Pre-AI corpus size.
 
 - **Reddit API (via PRAW)** — [https://www.reddit.com/dev/api/](https://www.reddit.com/dev/api/)
   - 🔄 In progress. API access application submitted and awaiting approval. Once approved, we will target r/technology, r/sysadmin, r/ChatGPT for event-window discussions.
