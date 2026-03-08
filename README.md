@@ -1,4 +1,4 @@
-# Catastrophic Backtracking
+# Error-502 Group Project
 
 ---
 
@@ -10,10 +10,10 @@ This project examines how media narratives describe major digital infrastructure
 
 - **Topic**: Comparative analysis of news coverage surrounding large-scale tech outages across two eras — Pre-AI (2019–2021) and Post-AI (2024–2025)
 - **Research Questions**:
-  - How does news vocabulary differ between Pre-AI and Post-AI outage coverage?
-  - Do sentiment polarity and emotional intensity differ across eras?
-  - Which actors (companies, systems, users, or AI) are framed as responsible or agentive in each era?
-  - How closely does public/news framing match technical post-mortem explanations?
+  - Does the sentiment (tone) of outage coverage differ across eras?
+  - What vocabulary and thematic frames distinguish pre-AI vs post-AI coverage?
+  - Has the attribution of blame and agency — who/what gets held responsible — changed?
+ 
 - **Why it matters**: As AI increasingly permeates public discourse, understanding whether and how it reshapes the framing of unrelated technical failures reveals broader shifts in media sense-making and public attribution of technological responsibility
 
 ## Additional Info
@@ -100,7 +100,10 @@ final-project-error-502/
 │   ├── News_Data_Collection1.ipynb         # Data collection: APIs, downloads, post-mortem scraping
 │   ├── data_cleaning.ipynb                 # Cleaning, harmonization, dataset preparation
 │   ├── visualization&analysis.ipynb        # Sentiment, TF-IDF, agency analysis, plotting
-│   └── BertTopic_pre_postAI_comparison.ipynb  # BERTopic modeling & NER-based era comparison
+│   └── BertTopic_pre_postAI_comparison.ipynb  # BERTopic modeling preliminary exploring notes
+│   └── extended_pipeline.ipynb     # BERTopic modeling & NER-based era comparison
+
+
 │
 ├── progress_report_1.md                    # Check-in 1: scope, data status, team plan
 ├── progress_report_2.md                    # Check-in 2: progress update
@@ -140,29 +143,29 @@ Standard library modules: `os`, `re`, `json`, `math`, `time`, `datetime`, `pathl
 
 # Contributions
 
-- **Zhimeng (Brittany) An**: Led and completed all data collection workflows — NYT API, Guardian API, GDELT downloads, and post-mortem web scraping (Cloudflare, Meta, AWS). Organized the raw data directory structure and maintained repository organization. Primary author of `News_Data_Collection1.ipynb`.
+- **Zhimeng (Brittany) An**: Led and completed all data collection workflows — NYT API, Guardian API, GDELT downloads, and post-mortem web scraping (Cloudflare, Meta, AWS). Organized the raw data directory structure and maintained repository organization. Conducted preliminary BERTopic explorations. Primary author of `News_Data_Collection1.ipynb` and `BertTopic_pre_postAI_comparison.ipynb`.
 - **Zehan Li**: Completed all data cleaning, harmonization, visualization, and analysis — including TF-IDF comparative analysis, VADER/TextBlob sentiment analysis, agency/blame attribution scoring, and all figure generation. Primary author of `data_cleaning.ipynb` and `visualization&analysis.ipynb`.
-- **Simmons Yin**: Conducted additional analysis using BERTopic modeling and Named Entity Recognition (NER) for entity-level framing comparison across eras. Primary author of `BertTopic_pre_postAI_comparison.ipynb`.
+- **Simmons Yin**: Conducted additional analysis using BERTopic modeling and Named Entity Recognition (NER) for entity-level framing comparison across eras. Primary author of `extended_pipeline.ipynb`.
 
 ---
 
 
 # AI Usage Statement
 
-**Tools used**: ChatGPT (OpenAI), Claude (Anthropic). All core logic, analysis design, and research decisions were made independently by team members. AI was consulted only for minor assistance as described below.
+**Tools used**: ChatGPT (OpenAI), Claude (Anthropic). All core logic, analysis design, and research decisions were made  by team members. AI was consulted  for  assistance as described below.
 
-- **NYT API pagination handling** (`News_Data_Collection1.ipynb`): ChatGPT was consulted to debug a rate-limiting retry loop when hitting the NYT Article Search API.
-- **Guardian full-text field extraction** (`News_Data_Collection1.ipynb`): ChatGPT was used to clarify the correct JSON path for extracting article body text from the Guardian API response.
+- **NYT API pagination, rate limiting, and UTC handling** (`News_Data_Collection1.ipynb`): Claude was consulted to debug the rate-limiting retry loop (HTTP 429 handling with time.sleep) when hitting the NYT Article Search API. Claude was additionally used to handle dates consistently UTC ISO format. Claude was also consulted to understand the nested JSON structure of NYT API responses 
+- **Guardian full-text field extraction** (`News_Data_Collection1.ipynb`): Claude was consulted to understand the Guardian API's response JSON structure, including how to enable full article body text. Claude also helped verify the logic to implement a per-page time.sleep to stay within the Guardian API's rate limits during multi-page pagination
 - **Regex pattern for date normalization** (`data_cleaning.ipynb`): ChatGPT was used to draft a regex pattern for parsing inconsistent date formats across sources.
 - **Matplotlib subplot layout** (`visualization&analysis.ipynb`): ChatGPT was consulted to adjust subplot spacing and shared axis formatting for the sentiment distribution figure.
 - **TF-IDF horizontal bar chart styling** (`visualization&analysis.ipynb`): ChatGPT was used to refine color mapping and label truncation for the distinctive-words figure.
-- **BERTopic parameter selection** (`BertTopic_pre_postAI_comparison.ipynb`): ChatGPT was consulted for guidance on `min_topic_size` and UMAP dimensionality parameters.
+- **BERTopic parameter selection** (`extended_pipeline.ipynb`): ChatGPT was consulted for guidance on `min_topic_size` and UMAP dimensionality parameters.
 
-Each team member is responsible for verifying the accuracy and originality of all AI-assisted outputs.
+
 ---
 
 # Project Links
 
-- **Slides used in the in-class presentation**: [link]
-- **Updated final slides (full version)**: [link]
+- **Slides used in the in-class presentation**: [https://docs.google.com/presentation/d/12K5dRpMGdQhw57jOoymh_BibeL8mv9z1/edit?slide=id.p3#slide=id.p3]
+- **Updated final slides (full version)**: [https://docs.google.com/presentation/d/1nreu6XDMZ4hU5bWSnePgj0aaHqBmk5f6ecoDGYRqtAk/edit?slide=id.g3c4a32236bc_0_57#slide=id.g3c4a32236bc_0_57]
 - **Presentation video**: [link]
