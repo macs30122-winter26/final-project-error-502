@@ -20,7 +20,7 @@ This project examines how media narratives describe major digital infrastructure
 
 **Total lines of code**: ~2,500 lines (across collection, cleaning, analysis, and visualization notebooks)
 
-**Methods and Analysis**: Comparative text analysis across two temporal corpora, including VADER and TextBlob sentiment analysis, TF-IDF feature extraction, agency/blame attribution scoring, and BERT-based NER for entity-level framing analysis.
+**Methods and Analysis**: Comparative text analysis across two temporal corpora, including VADER and TextBlob sentiment analysis, TF-IDF feature extraction, agency/blame attribution scoring, and BERTopic modeling with NER for entity-level framing analysis.
 
 **Project strength**: Analysis and visualizations — the project produces a rich set of comparative figures (sentiment distributions, TF-IDF keyword contrasts, agency heatmaps) that clearly illustrate framing shifts across eras.
 
@@ -42,35 +42,75 @@ This project examines how media narratives describe major digital infrastructure
 ```
 final-project-error-502/
 ├── data/
-│   ├── raw/                            # Raw source-level files (API exports, downloads)
-│   │   ├── nyt/
-│   │   ├── guardian/
-│   │   ├── gdelt/
-│   │   └── postmortem/
-│   ├── pre_AI/                         # Curated Pre-AI event datasets
-│   ├── post_AI/                        # Curated Post-AI event datasets
-│   ├── merged_all_articles.csv         # Combined article-level table across events & sources
-│   ├── merged_guardian_fulltext.csv     # Guardian-focused merged full-text table
-│   ├── merged_relevant_articles.csv    # Filtered corpus for downstream analysis
-│   └── analysis&visualization/         # Cleaned analysis outputs & generated figures
+│   ├── raw/                                # Raw source-level files
+│   │   ├── GDELT/                          # GDELT GKG mention CSVs
+│   │   │   ├── gdelt_20190701_20190704_cloudflare_mentions.csv
+│   │   │   ├── gdelt_20211207_20211210_aws_mentions.csv
+│   │   │   └── gdelt_20251117_20251120_cloudflare_mentions.csv
+│   │   ├── Guardian/                       # Raw Guardian API exports
+│   │   │   └── guardian_facebook_outage_2021-10_constraint.csv
+│   │   ├── NYT/                            # Raw NYT API exports
+│   │   │   ├── NEW_nyt_cloudflare_20090101_20260202.csv
+│   │   │   └── nyt_facebook_outage_2021-10-04.csv
+│   │   └── postmortem_all.csv              # Scraped post-mortem reports
+│   │
+│   ├── pre_AI/                             # Curated Pre-AI event datasets (2019–2021)
+│   │   ├── guardian_aws_2021.csv
+│   │   ├── guardian_facebook_outage_2021-10.csv
+│   │   ├── guardian_fastly_2021.csv
+│   │   ├── guardian_google_2020.csv
+│   │   ├── nyt_aws_2021.csv
+│   │   ├── nyt_cloudflare_2019-07-02.csv
+│   │   ├── nyt_facebook_outage_2021-10-04.csv
+│   │   ├── nyt_facebook_outage_2021-10.csv
+│   │   ├── nyt_fastly_2021.csv
+│   │   └── nyt_google_2020.csv
+│   │
+│   ├── post_AI/                            # Curated Post-AI event datasets (2024–2025)
+│   │   ├── guardian_aws_2025.csv
+│   │   ├── guardian_azure_2025.csv
+│   │   ├── guardian_cloudflare_outage_2025-11-17_2025-1-20.csv
+│   │   ├── guardian_crowdstrike_2024.csv
+│   │   ├── guardian_google_cloud_2025.csv
+│   │   ├── nyt_aws_2025.csv
+│   │   ├── nyt_azure_2025.csv
+│   │   ├── nyt_cloudflare_2025-11-18.csv
+│   │   ├── nyt_crowdstrike_2024.csv
+│   │   ├── nyt_google_cloud_2025.csv
+│   │   └── postmortem_all.csv
+│   │
+│   ├── merged_all_articles.csv             # Combined article-level table across events & sources
+│   ├── merged_guardian_fulltext.csv         # Guardian-focused merged full-text table
+│   ├── merged_relevant_articles.csv        # Filtered corpus for downstream analysis
+│   │
+│   └── analysis&visualization/             # Cleaned analysis outputs & generated figures
+│       ├── agency_intensity_results_clean.csv
+│       ├── agency_prevalence_results_clean.csv
+│       ├── guardian_analyzed_clean.csv
+│       ├── keyword_frequency_results_clean.csv
 │       ├── tfidf_results_clean.csv
-│       ├── agency_*_clean.csv
-│       └── *.png
+│       ├── fig_agency_by_event_clean.png
+│       ├── fig_agency_heatmap_clean.png
+│       ├── fig_keyword_frequency_clean.png
+│       ├── fig_sentiment_by_event.png
+│       ├── fig_sentiment_distributions.png
+│       └── fig_tfidf_distinctive_words_clean.png
 │
 ├── scripts/
-│   ├── News_Data_Collection1.ipynb     # Data collection: APIs, downloads, post-mortem scraping
-│   ├── data_cleaning.ipynb             # Cleaning, harmonization, dataset preparation
-│   └── visualization&analysis.ipynb    # Sentiment, TF-IDF, agency analysis, plotting
+│   ├── News_Data_Collection1.ipynb         # Data collection: APIs, downloads, post-mortem scraping
+│   ├── data_cleaning.ipynb                 # Cleaning, harmonization, dataset preparation
+│   ├── visualization&analysis.ipynb        # Sentiment, TF-IDF, agency analysis, plotting
+│   └── BertTopic_pre_postAI_comparison.ipynb  # BERTopic modeling & NER-based era comparison
 │
-├── docs/
-│   └── progress_report_1.md            # Progress report: scope updates, data status, team plan
-│
+├── progress_report_1.md                    # Check-in 1: scope, data status, team plan
+├── progress_report_2.md                    # Check-in 2: progress update
 └── README.md
 ```
 
-- `data/` — raw downloads, curated era-specific subsets, merged corpora, and analysis outputs/figures
-- `scripts/` — Jupyter notebooks for collection, cleaning, and analysis
-- `docs/` — project documentation and progress reports
+- `data/raw/` — unprocessed API exports, GDELT downloads, and scraped post-mortem reports
+- `data/pre_AI/` & `data/post_AI/` — curated per-event datasets split by era
+- `data/analysis&visualization/` — cleaned analysis CSVs and all generated figures
+- `scripts/` — Jupyter notebooks for collection, cleaning, analysis, and BERTopic modeling
 
 ---
 
@@ -91,7 +131,8 @@ final-project-error-502/
 | textblob | 0.19.0 |
 | requests | 2.32.3 |
 | beautifulsoup4 | 4.12.3 |
-| transformers | (BERT/NER) |
+| transformers | (BERTopic/NER) |
+| bertopic | (BERTopic modeling) |
 
 Standard library modules: `os`, `re`, `json`, `math`, `time`, `datetime`, `pathlib`, `warnings` (bundled with Python 3.13.5).
 
@@ -101,13 +142,14 @@ Standard library modules: `os`, `re`, `json`, `math`, `time`, `datetime`, `pathl
 
 - **Zhimeng (Brittany) An**: Led and completed all data collection workflows — NYT API, Guardian API, GDELT downloads, and post-mortem web scraping (Cloudflare, Meta, AWS). Organized the raw data directory structure and maintained repository organization. Primary author of `News_Data_Collection1.ipynb`.
 - **Zehan Li**: Completed all data cleaning, harmonization, visualization, and analysis — including TF-IDF comparative analysis, VADER/TextBlob sentiment analysis, agency/blame attribution scoring, and all figure generation. Primary author of `data_cleaning.ipynb` and `visualization&analysis.ipynb`.
-- **Simmons Yin**: Conducted additional analysis using BERT-based models and Named Entity Recognition (NER) for entity-level framing, and contributed to statistical comparison across eras.
+- **Simmons Yin**: Conducted additional analysis using BERTopic modeling and Named Entity Recognition (NER) for entity-level framing comparison across eras. Primary author of `BertTopic_pre_postAI_comparison.ipynb`.
 
 ---
 
 # AI Usage Statement
 
 - **ChatGPT (OpenAI)**: Used for debugging code errors, brainstorming analysis approaches, and refining notebook documentation.
+- **Claude (Anthropic)**: Used for drafting and editing written components (progress reports, README), code review, and exploring analytical framing strategies.
 
 Each team member is responsible for verifying the accuracy and originality of all AI-assisted outputs.
 
