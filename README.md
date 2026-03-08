@@ -143,7 +143,7 @@ Standard library modules: `os`, `re`, `json`, `math`, `time`, `datetime`, `pathl
 
 # Contributions
 
-- **Zhimeng (Brittany) An**: Led and completed all data collection workflows — NYT API, Guardian API, GDELT downloads, and post-mortem web scraping (Cloudflare, Meta, AWS). Organized the raw data directory structure and maintained repository organization. Conducted preliminary BERTopic explorations. Primary author of `News_Data_Collection1.ipynb` and `BertTopic_pre_postAI_comparison.ipynb`.
+- **Zhimeng (Brittany) An**: Led and completed all data collection workflows — NYT API, Guardian API, GDELT downloads, and post-mortem web scraping (Cloudflare, Meta, AWS). Organized the raw data directory structure and maintained repository organization. Conducted preliminary BERTopic explorations. Primary author of `News_Data_Collection1.ipynb`.
 - **Zehan Li**: Completed all data cleaning, harmonization, visualization, and analysis — including TF-IDF comparative analysis, VADER/TextBlob sentiment analysis, agency/blame attribution scoring, and all figure generation. Primary author of `data_cleaning.ipynb` and `visualization&analysis.ipynb`.
 - **Simmons Yin**: Conducted additional analysis using BERTopic modeling and Named Entity Recognition (NER) for entity-level framing comparison across eras. Primary author of `extended_pipeline.ipynb`, 'Bertopic'.
 
