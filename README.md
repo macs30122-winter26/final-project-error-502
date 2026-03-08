@@ -145,7 +145,7 @@ Standard library modules: `os`, `re`, `json`, `math`, `time`, `datetime`, `pathl
 
 - **Zhimeng (Brittany) An**: Led and completed all data collection workflows — NYT API, Guardian API, GDELT downloads, and post-mortem web scraping (Cloudflare, Meta, AWS). Organized the raw data directory structure and maintained repository organization. Conducted preliminary BERTopic explorations. Primary author of `News_Data_Collection1.ipynb` and `BertTopic_pre_postAI_comparison.ipynb`.
 - **Zehan Li**: Completed all data cleaning, harmonization, visualization, and analysis — including TF-IDF comparative analysis, VADER/TextBlob sentiment analysis, agency/blame attribution scoring, and all figure generation. Primary author of `data_cleaning.ipynb` and `visualization&analysis.ipynb`.
-- **Simmons Yin**: Conducted additional analysis using BERTopic modeling and Named Entity Recognition (NER) for entity-level framing comparison across eras. Primary author of `extended_pipeline.ipynb`.
+- **Simmons Yin**: Conducted additional analysis using BERTopic modeling and Named Entity Recognition (NER) for entity-level framing comparison across eras. Primary author of `extended_pipeline.ipynb`, 'Bertopic'.
 
 ---
 
@@ -159,7 +159,8 @@ Standard library modules: `os`, `re`, `json`, `math`, `time`, `datetime`, `pathl
 - **Regex pattern for date normalization** (`data_cleaning.ipynb`): ChatGPT was used to draft a regex pattern for parsing inconsistent date formats across sources.
 - **Matplotlib subplot layout** (`visualization&analysis.ipynb`): ChatGPT was consulted to adjust subplot spacing and shared axis formatting for the sentiment distribution figure.
 - **TF-IDF horizontal bar chart styling** (`visualization&analysis.ipynb`): ChatGPT was used to refine color mapping and label truncation for the distinctive-words figure.
-- **BERTopic parameter selection** (`extended_pipeline.ipynb`): ChatGPT was consulted for guidance on `min_topic_size` and UMAP dimensionality parameters.
+- **stopwords** (`BERTopic_pre_postAI_comparison.ipynb`): ChatGPT was consulted for guidance on custom stopwords.
+- **Keywords matching + svo extraction**: ChatGPT was consulted for two main things, one is that since we have to initially filter sentences to be AI-related or not, we consulted ChatGPT for deciding relevant keywords, the other one is that ChatGPT was consulted for addressing phrases in passive constructions.
 
 
 ---
