@@ -149,9 +149,6 @@ Standard library modules: `os`, `re`, `json`, `math`, `time`, `datetime`, `pathl
 # AI Usage Statement
 
 - **ChatGPT (OpenAI)**: Used for debugging code errors, brainstorming analysis approaches, and refining notebook documentation.
-- **Claude (Anthropic)**: Used for drafting and editing written components (progress reports, README), code review, and exploring analytical framing strategies.
-
-Each team member is responsible for verifying the accuracy and originality of all AI-assisted outputs.
 
 ---
 
