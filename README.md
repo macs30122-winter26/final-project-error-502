@@ -100,8 +100,9 @@ final-project-error-502/
 │   ├── News_Data_Collection1.ipynb         # Data collection: APIs, downloads, post-mortem scraping
 │   ├── data_cleaning.ipynb                 # Cleaning, harmonization, dataset preparation
 │   ├── visualization&analysis.ipynb        # Sentiment, TF-IDF, agency analysis, plotting
-│   └── BertTopic_pre_postAI_comparison.ipynb  # BERTopic modeling preliminary exploring notes
+│   └── BertTopic_pre_postAI_comparison.ipynb  # BERTopic modeling 
 │   └── extended_pipeline.ipynb     # BERTopic modeling & NER-based era comparison
+│   └── preliminary_BertTopic_learning.ipynb  # BERTopic modeling preliminary exploring notes
 
 
 │
