@@ -52,4 +52,4 @@ Our focus area is **Option 4: Textual Data Analysis**. The core contribution is 
 
 - **Zhimeng (Brittany) An**: Data collection — Cloudflare 2019, 2025 (NYT + Guardian), GDELT GKG (Cloudflare 2019, Cloudflare 2025), supplementary event collection script (Google 2020, Fastly 2021, AWS 2021, Google Cloud 2025, Azure 2025), post-mortem scraping; ongoing analysis refinement
 - **Zehan Li**: Data collection — CrowdStrike 2024, AWS 2025, Cloudflare 2025; drafted data cleaning pipeline and analysis pipeline (sentiment, TF-IDF, framing keywords, agency attribution); ongoing analysis refinement
-- **Simmons Yin**: Data collection — Facebook 2021 (NYT + Guardian), GDELT GKG (AWS 2021); ongoing analysis refinement
+- **Simmons Yin**: Data collection — Facebook 2021 (NYT + Guardian), GDELT GKG (AWS 2021); extended analysis on AI-related sentences from full-text (SVO, agency shift, sentiment); ongoing analysis refinement
