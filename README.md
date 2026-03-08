@@ -146,10 +146,19 @@ Standard library modules: `os`, `re`, `json`, `math`, `time`, `datetime`, `pathl
 
 ---
 
+
 # AI Usage Statement
 
-- **ChatGPT (OpenAI)**: Used for debugging code errors, brainstorming analysis approaches, and refining notebook documentation.
+**Tools used**: ChatGPT (OpenAI), Claude (Anthropic). All core logic, analysis design, and research decisions were made independently by team members. AI was consulted only for minor assistance as described below.
 
+- **NYT API pagination handling** (`News_Data_Collection1.ipynb`): ChatGPT was consulted to debug a rate-limiting retry loop when hitting the NYT Article Search API.
+- **Guardian full-text field extraction** (`News_Data_Collection1.ipynb`): ChatGPT was used to clarify the correct JSON path for extracting article body text from the Guardian API response.
+- **Regex pattern for date normalization** (`data_cleaning.ipynb`): ChatGPT was used to draft a regex pattern for parsing inconsistent date formats across sources.
+- **Matplotlib subplot layout** (`visualization&analysis.ipynb`): ChatGPT was consulted to adjust subplot spacing and shared axis formatting for the sentiment distribution figure.
+- **TF-IDF horizontal bar chart styling** (`visualization&analysis.ipynb`): ChatGPT was used to refine color mapping and label truncation for the distinctive-words figure.
+- **BERTopic parameter selection** (`BertTopic_pre_postAI_comparison.ipynb`): ChatGPT was consulted for guidance on `min_topic_size` and UMAP dimensionality parameters.
+
+Each team member is responsible for verifying the accuracy and originality of all AI-assisted outputs.
 ---
 
 # Project Links
