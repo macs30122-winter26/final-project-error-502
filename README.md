@@ -170,4 +170,4 @@ Standard library modules: `os`, `re`, `json`, `math`, `time`, `datetime`, `pathl
 
 - **Slides used in the in-class presentation**: [https://docs.google.com/presentation/d/12K5dRpMGdQhw57jOoymh_BibeL8mv9z1/edit?slide=id.p3#slide=id.p3]
 - **Updated final slides (full version)**: [https://docs.google.com/presentation/d/1nreu6XDMZ4hU5bWSnePgj0aaHqBmk5f6ecoDGYRqtAk/edit?slide=id.g3c4a32236bc_0_57#slide=id.g3c4a32236bc_0_57]
-- **Presentation video**: [link]
+- **Presentation video**: [https://drive.google.com/file/d/1aqpmOJxY0ML6JkQLN56moD4Ts8ESRUxN/view?usp=sharing]
